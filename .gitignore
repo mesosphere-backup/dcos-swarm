@@ -1,0 +1,7 @@
+dist
+build
+.tox
+env
+dcos_swarm.egg-info
+tests/integration/__pycache__
+**.pyc
