@@ -35,7 +35,7 @@ def print_env():
     if url.endswith("/"):
         url = url[:-1]
 
-    print("export DOCKER_HOST=" + url + ":80/service/swarm/")
+    print("export DOCKER_HOST=" + url + ":80/service/swarm")
     return 0;
 
 def main():
