@@ -5,6 +5,7 @@ Usage:
     dcos swarm --info
     dcos swarm --version
     dcos swarm --config-schema
+    dcos swarm daemon
 
 Options:
     --help                  Show this screen
@@ -13,14 +14,12 @@ Options:
 """
 from __future__ import print_function
 import docopt
-from dcos_spark import constants, discovery, spark_submit
+import os
+from dcos_swarm import constants, discovery
 
 
 def swarm_daemon():
     return discovery.get_swarm_daemon()
-
-def proxy_docker(args):
-    return docker_client.proxy(swarm_daemon(), args)
 
 def print_schema():
     print("{}")
@@ -34,6 +33,8 @@ def main():
         print(__doc__.split('\n')[0])
     elif args['--config-schema']:
         print_schema()
+    elif args['daemon']:
+        print("DOCKER_HOST=" + swarm_daemon())
     else:
         print(__doc__)
         return 1
