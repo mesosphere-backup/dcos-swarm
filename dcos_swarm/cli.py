@@ -41,7 +41,7 @@ def print_env():
 def main():
     args = docopt.docopt(
         __doc__,
-        version='dcos-spark version {}'.format(constants.version), help=False)
+        version='dcos-swarm version {}'.format(constants.version), help=False)
 
     if args['--info']:
         print(__doc__.split('\n')[0])
